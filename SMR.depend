@@ -263,3 +263,47 @@
 	"comm_func.h"
 	"math_func.h"
 
+1317263396 source:/media/truecrypt1/Main/SMRgit/Test/comm_func.cpp
+	"comm_func.h"
+	"math_func.h"
+
+1317004703 /media/truecrypt1/Main/SMRgit/Test/comm_func.h
+	"init.h"
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"math_func.h"
+	"generic_func.h"
+	"impulse.h"
+
+1317701594 /media/truecrypt1/Main/SMRgit/Test/init.h
+	<stdio.h>
+	"/usr/include/gsl/gsl_linalg.h"
+
+1310503389 /media/truecrypt1/Main/SMRgit/Test/math_func.h
+	<math.h>
+	"generic_func.h"
+	"init.h"
+
+1314318392 /media/truecrypt1/Main/SMRgit/Test/generic_func.h
+	<stdio.h>
+	<stdlib.h>
+	"init.h"
+
+1318219366 /media/truecrypt1/Main/SMRgit/Test/impulse.h
+
+1314318376 source:/media/truecrypt1/Main/SMRgit/Test/generic_func.cpp
+	"generic_func.h"
+
+1317701221 source:/media/truecrypt1/Main/SMRgit/Test/impulse.cpp
+	"init.h"
+	"impulse.h"
+	"math_func.h"
+	<math.h>
+
+1310503380 source:/media/truecrypt1/Main/SMRgit/Test/math_func.cpp
+	"math_func.h"
+
+1314146926 source:/media/truecrypt1/Main/SMRgit/Test/zeroinit.cpp
+	"init.h"
+

@@ -20,7 +20,7 @@
 #define TMR_OD_Enable 0 //0 is disabled , 1 is Enabled
 #define TMR_ID_Enable 0 //0 is disabled , 1 is Enabled
 
-#define ITI 27
+#define ITI 20
 //check impulse.h for P_cross to modify
 /****Specify equalizer*********************/
 #define oneD_EQ 0// 0 implies false 1 implies selected
