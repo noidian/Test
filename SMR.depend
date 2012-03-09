@@ -1,0 +1,265 @@
+# depslib dependency file v1.0
+1305949294 source:/media/truecrypt1/Main/SMR/Simulation/SMR_2011/C Code/SMR/main.cpp
+	<unistd.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	"init.h"
+	"tdmr.h"
+	"generic_func.h"
+	"math_func.h"
+
+1305938511 source:/media/truecrypt1/Main/SMR/Simulation/SMR_2011/C Code/SMR/impulse.cpp
+	"init.h"
+	"tdmr.h"
+	<math.h>
+
+1305923790 /media/truecrypt1/Main/SMR/Simulation/SMR_2011/C Code/SMR/init.h
+
+1305938508 /media/truecrypt1/Main/SMR/Simulation/SMR_2011/C Code/SMR/tdmr.h
+
+1305938469 source:/media/truecrypt1/Main/SMR/Simulation/SMR_2011/C Code/SMR/zeroinit.cpp
+	"init.h"
+
+1305949288 source:/media/truecrypt1/Main/SMR/Simulation/SMR_2011/C Code/SMR/generic_func.cpp
+	"generic_func.h"
+
+1305949274 /media/truecrypt1/Main/SMR/Simulation/SMR_2011/C Code/SMR/generic_func.h
+	<stdio.h>
+	"init.h"
+
+1305942232 /media/truecrypt1/Main/SMR/Simulation/SMR_2011/C Code/SMR/math_func.h
+	<math.h>
+	"init.h"
+
+1305942232 source:/media/truecrypt1/Main/SMR/Simulation/SMR_2011/C Code/SMR/math_func.cpp
+	"math_func.h"
+
+1307202408 source:/media/truecrypt1/Main/SMR/Simulation/SMR_2011/C_Code/SMR/generic_func.cpp
+	"generic_func.h"
+
+1307202348 /media/truecrypt1/Main/SMR/Simulation/SMR_2011/C_Code/SMR/generic_func.h
+	<stdio.h>
+	<stdlib.h>
+	"init.h"
+
+1310603397 /media/truecrypt1/Main/SMR/Simulation/SMR_2011/C_Code/SMR/init.h
+	<stdio.h>
+	"/usr/include/gsl/gsl_linalg.h"
+
+1307813182 source:/media/truecrypt1/Main/SMR/Simulation/SMR_2011/C_Code/SMR/impulse.cpp
+	"init.h"
+	"impulse.h"
+	"math_func.h"
+	<math.h>
+
+1306723694 /media/truecrypt1/Main/SMR/Simulation/SMR_2011/C_Code/SMR/tdmr.h
+
+1310859676 source:/media/truecrypt1/Main/SMR/Simulation/SMR_2011/C_Code/SMR/main.cpp
+	<unistd.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	"init.h"
+	"impulse.h"
+	"generic_func.h"
+	"math_func.h"
+	"comm_func.h"
+
+1310503389 /media/truecrypt1/Main/SMR/Simulation/SMR_2011/C_Code/SMR/math_func.h
+	<math.h>
+	"generic_func.h"
+	"init.h"
+
+1310503380 source:/media/truecrypt1/Main/SMR/Simulation/SMR_2011/C_Code/SMR/math_func.cpp
+	"math_func.h"
+
+1306806501 source:/media/truecrypt1/Main/SMR/Simulation/SMR_2011/C_Code/SMR/zeroinit.cpp
+	"init.h"
+
+1310603263 source:/media/truecrypt1/Main/SMR/Simulation/SMR_2011/C_Code/SMR/comm_func.cpp
+	"comm_func.h"
+	"math_func.h"
+
+1310519162 /media/truecrypt1/Main/SMR/Simulation/SMR_2011/C_Code/SMR/comm_func.h
+	"init.h"
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"math_func.h"
+	"generic_func.h"
+	"impulse.h"
+
+1257409705 /usr/include/gsl/gsl_linalg.h
+	<gsl/gsl_mode.h>
+	<gsl/gsl_permutation.h>
+	<gsl/gsl_vector.h>
+	<gsl/gsl_matrix.h>
+
+1306868973 /media/truecrypt1/Main/SMR/Simulation/SMR_2011/C_Code/SMR/impulse.h
+
+1308459745 source:/media/truecrypt1/Lab/SMR/Simulation/SMR_2011/C_Code/SMR/comm_func.cpp
+	"comm_func.h"
+	"math_func.h"
+
+1308459745 /media/truecrypt1/Lab/SMR/Simulation/SMR_2011/C_Code/SMR/comm_func.h
+	"init.h"
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"math_func.h"
+	"generic_func.h"
+	"impulse.h"
+
+1309261502 /media/truecrypt1/Lab/SMR/Simulation/SMR_2011/C_Code/SMR/init.h
+	<stdio.h>
+	"/usr/include/gsl/gsl_linalg.h"
+
+1308459746 /media/truecrypt1/Lab/SMR/Simulation/SMR_2011/C_Code/SMR/math_func.h
+	<math.h>
+	"generic_func.h"
+	"init.h"
+
+1308459745 /media/truecrypt1/Lab/SMR/Simulation/SMR_2011/C_Code/SMR/generic_func.h
+	<stdio.h>
+	<stdlib.h>
+	"init.h"
+
+1308459745 /media/truecrypt1/Lab/SMR/Simulation/SMR_2011/C_Code/SMR/impulse.h
+
+1308459745 source:/media/truecrypt1/Lab/SMR/Simulation/SMR_2011/C_Code/SMR/generic_func.cpp
+	"generic_func.h"
+
+1308459745 source:/media/truecrypt1/Lab/SMR/Simulation/SMR_2011/C_Code/SMR/impulse.cpp
+	"init.h"
+	"impulse.h"
+	"math_func.h"
+	<math.h>
+
+1309264514 source:/media/truecrypt1/Lab/SMR/Simulation/SMR_2011/C_Code/SMR/main.cpp
+	<unistd.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	"init.h"
+	"impulse.h"
+	"generic_func.h"
+	"math_func.h"
+	"comm_func.h"
+
+1308459746 source:/media/truecrypt1/Lab/SMR/Simulation/SMR_2011/C_Code/SMR/math_func.cpp
+	"math_func.h"
+
+1308459746 source:/media/truecrypt1/Lab/SMR/Simulation/SMR_2011/C_Code/SMR/zeroinit.cpp
+	"init.h"
+
+1316389065 source:/media/truecrypt1/Main/SMR/Simulation/C_Code/SMR/comm_func.cpp
+	"comm_func.h"
+	"math_func.h"
+
+1316388234 /media/truecrypt1/Main/SMR/Simulation/C_Code/SMR/comm_func.h
+	"init.h"
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"math_func.h"
+	"generic_func.h"
+	"impulse.h"
+
+1316392340 /media/truecrypt1/Main/SMR/Simulation/C_Code/SMR/init.h
+	<stdio.h>
+	"/usr/include/gsl/gsl_linalg.h"
+
+1310503389 /media/truecrypt1/Main/SMR/Simulation/C_Code/SMR/math_func.h
+	<math.h>
+	"generic_func.h"
+	"init.h"
+
+1314318392 /media/truecrypt1/Main/SMR/Simulation/C_Code/SMR/generic_func.h
+	<stdio.h>
+	<stdlib.h>
+	"init.h"
+
+1306868973 /media/truecrypt1/Main/SMR/Simulation/C_Code/SMR/impulse.h
+
+1314318376 source:/media/truecrypt1/Main/SMR/Simulation/C_Code/SMR/generic_func.cpp
+	"generic_func.h"
+
+1307813182 source:/media/truecrypt1/Main/SMR/Simulation/C_Code/SMR/impulse.cpp
+	"init.h"
+	"impulse.h"
+	"math_func.h"
+	<math.h>
+
+1310503380 source:/media/truecrypt1/Main/SMR/Simulation/C_Code/SMR/math_func.cpp
+	"math_func.h"
+
+1314146926 source:/media/truecrypt1/Main/SMR/Simulation/C_Code/SMR/zeroinit.cpp
+	"init.h"
+
+1316392966 source:/media/truecrypt1/Main/SMR/Simulation/C_Code/SMR/main.cpp
+	<unistd.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	"init.h"
+	"impulse.h"
+	"generic_func.h"
+	"math_func.h"
+	"comm_func.h"
+
+1314318376 source:/media/truecrypt1/Main/SMR/Simulation/C_Code/SMR_LDPC/generic_func.cpp
+	"generic_func.h"
+
+1314318392 /media/truecrypt1/Main/SMR/Simulation/C_Code/SMR_LDPC/generic_func.h
+	<stdio.h>
+	<stdlib.h>
+	"init.h"
+
+1317701594 /media/truecrypt1/Main/SMR/Simulation/C_Code/SMR_LDPC/init.h
+	<stdio.h>
+	"/usr/include/gsl/gsl_linalg.h"
+
+1317701221 source:/media/truecrypt1/Main/SMR/Simulation/C_Code/SMR_LDPC/impulse.cpp
+	"init.h"
+	"impulse.h"
+	"math_func.h"
+	<math.h>
+
+1318219366 /media/truecrypt1/Main/SMR/Simulation/C_Code/SMR_LDPC/impulse.h
+
+1310503389 /media/truecrypt1/Main/SMR/Simulation/C_Code/SMR_LDPC/math_func.h
+	<math.h>
+	"generic_func.h"
+	"init.h"
+
+1320007968 source:/media/truecrypt1/Main/SMR/Simulation/C_Code/SMR_LDPC/main.cpp
+	<unistd.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	"init.h"
+	"impulse.h"
+	"generic_func.h"
+	"math_func.h"
+	"comm_func.h"
+
+1317004703 /media/truecrypt1/Main/SMR/Simulation/C_Code/SMR_LDPC/comm_func.h
+	"init.h"
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"math_func.h"
+	"generic_func.h"
+	"impulse.h"
+
+1310503380 source:/media/truecrypt1/Main/SMR/Simulation/C_Code/SMR_LDPC/math_func.cpp
+	"math_func.h"
+
+1314146926 source:/media/truecrypt1/Main/SMR/Simulation/C_Code/SMR_LDPC/zeroinit.cpp
+	"init.h"
+
+1317263396 source:/media/truecrypt1/Main/SMR/Simulation/C_Code/SMR_LDPC/comm_func.cpp
+	"comm_func.h"
+	"math_func.h"
+
