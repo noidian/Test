@@ -1532,7 +1532,7 @@ int sova_detection(int MemoryDepth, int Nbstates, long double *target, int targe
 
 	int bit,corr_col,l,reqd_col,m;
 
-	int error_temp,buffer_position,min_metric_val,min_metric_state;
+	int error_temp,buffer_position,min_metric_val,min_metric_state=0;
 	int **state_history,**complement_state_history,*state_sequence,*comp_state_sequence;
 
 	long double x_temp,x,max_weight,branch_metric;
@@ -1551,7 +1551,7 @@ int sova_detection(int MemoryDepth, int Nbstates, long double *target, int targe
 	/*								Initialisation		 						*/
 	/****************************************************************************/
 	// give a huge value for the maximum metric
-	max_weight=(long double)(ip_length*10000);
+	max_weight=(long double)(ip_length)*10000;
 	// initialisation of the metrics
 	for (i=0; i<Nbstates; i++)
 	{
@@ -2239,7 +2239,7 @@ long double ber_compute(int *input1,int *input2,int Nb_values)
 
 
 
-long double oneD_equalize_oneD_SOVA(int *tx_bits,int current_sample_length, long double *rx_bits,int Nb_eq,int Nb_target,int *ber_bits,float SNR)
+long double oneD_equalize_oneD_SOVA(int *tx_bits,int current_sample_length, long double *rx_bits,int Nb_eq,int Nb_target,int *ber_bits,long int *llr_length, long double *llr,float SNR)
 {
 
 
@@ -2254,9 +2254,6 @@ long double oneD_equalize_oneD_SOVA(int *tx_bits,int current_sample_length, long
     int MemoryDepth;
     int NbStates;
     int *SOVA_out;
-
-    long double *llr;
-    long int *llr_length;
 
     /**********Equalizer computation*********/
     track_count=1;          // Assuming 1 track on each side influence
@@ -2307,19 +2304,22 @@ long double oneD_equalize_oneD_SOVA(int *tx_bits,int current_sample_length, long
     SOVA_out=vector_calloc_int(current_sample_length);
 
 
-    llr=vector_calloc(current_sample_length);
+
 
     /************Include for VA***********************/
-    va_detection(MemoryDepth,NbStates,target,Nb_target,equalized_op, SOVA_out,current_sample_length);
+    //va_detection(MemoryDepth,NbStates,target,Nb_target,equalized_op, SOVA_out,current_sample_length);
     /************Include for VA***********************/
 
-    llr_length=(long int *)malloc( sizeof(long int));
+
 
     /************Include for SOVA***********************/
-    //sova_detection(MemoryDepth,NbStates,target,Nb_target,equalized_op, SOVA_out,llr,llr_length,current_sample_length);
+    sova_detection(MemoryDepth,NbStates,target,Nb_target,equalized_op, SOVA_out,llr,llr_length,current_sample_length);
 
+    //Use this for correct number of LLR ignoring the last data block
     //current_sample_length=*llr_length;
 
+    //though last of data is not valid here we consider it just for completeness and can ignore the last block of error for completemnetss when usign LDPC!!
+    *llr_length=current_sample_length;
     /************Include for SOVA***********************/
 
 
@@ -2337,8 +2337,7 @@ long double oneD_equalize_oneD_SOVA(int *tx_bits,int current_sample_length, long
 
    free (equalized_op);
 
-   free (llr_length);
-   free (llr);
+
 
    free (equalizer);
    free (target);
@@ -2348,7 +2347,7 @@ long double oneD_equalize_oneD_SOVA(int *tx_bits,int current_sample_length, long
     return ber_val;
 }
 
-long double twoD_equalize_oneD_SOVA(int **tx_merge,int current_sample_length, long double *rx_main,long double *rx_adj1_OD,long double *rx_adj1_ID,int Nb_eq_main,int Nb_eq_adj1_OD,int Nb_eq_adj1_ID,int Nb_target,int *ber_bits,float SNR)
+long double twoD_equalize_oneD_SOVA(int **tx_merge,int current_sample_length, long double *rx_main,long double *rx_adj1_OD,long double *rx_adj1_ID,int Nb_eq_main,int Nb_eq_adj1_OD,int Nb_eq_adj1_ID,int Nb_target,int *ber_bits,long int *llr_length, long double *llr,float SNR)
 {
 
   long double *equalizer_main,*equalizer_adj1_OD,*equalizer_adj1_ID,*target;
@@ -2363,8 +2362,6 @@ long double twoD_equalize_oneD_SOVA(int **tx_merge,int current_sample_length, lo
     int NbStates;
     int *SOVA_out;
 
-    long double *llr;
-    long int *llr_length;
 
     /**********Equalizer computation*********/
     track_count=1;          // Assuming 1 track on each side influence
@@ -2442,23 +2439,24 @@ long double twoD_equalize_oneD_SOVA(int **tx_merge,int current_sample_length, lo
     SOVA_out=vector_calloc_int(current_sample_length);
 
 
-    llr=vector_calloc(current_sample_length);
 
     /************Include for VA***********************/
-     va_detection(MemoryDepth,NbStates,target,Nb_target,equalized_op, SOVA_out,current_sample_length);
+     //va_detection(MemoryDepth,NbStates,target,Nb_target,equalized_op, SOVA_out,current_sample_length);
     /************Include for VA***********************/
 
-    llr_length=(long int *)malloc( sizeof(long int));
 
-    /************Include for SOVA***********************/
-    //sova_detection(MemoryDepth,NbStates,target,Nb_target,equalized_op, SOVA_out,llr,llr_length,current_sample_length);
+   /************Include for SOVA***********************/
+    sova_detection(MemoryDepth,NbStates,target,Nb_target,equalized_op, SOVA_out,llr,llr_length,current_sample_length);
 
+    //Use this for correct number of LLR ignoring the last data block
     //current_sample_length=*llr_length;
 
+    //though last of data is not valid here we consider it just for completeness and can ignore the last block of error for completemnetss when usign LDPC!!
+    *llr_length=current_sample_length;
     /************Include for SOVA***********************/
 
 
-    /************Include for MAP***********************/
+     /************Include for MAP***********************/
     //map_detection(MemoryDepth,NbStates,target,Nb_target,equalized_op, SOVA_out,llr,llr_length,current_sample_length,SNR);
 
     //current_sample_length=*llr_length;
@@ -2490,13 +2488,11 @@ long double twoD_equalize_oneD_SOVA(int **tx_merge,int current_sample_length, lo
    free (target);
 
     free (SOVA_out);
-    free (llr_length);
-   free (llr);
 
     return ber_val;
 }
 
-long double onesided_equalize_oneD_SOVA(int **tx_merge,int current_sample_length, long double *rx_main,long double *rx_adj1_OD,int Nb_eq_main,int Nb_eq_adj1_OD,int Nb_target,int *ber_bits,float SNR)
+long double onesided_equalize_oneD_SOVA(int **tx_merge,int current_sample_length, long double *rx_main,long double *rx_adj1_OD,int Nb_eq_main,int Nb_eq_adj1_OD,int Nb_target,int *ber_bits,long int *llr_length, long double *llr,float SNR)
 {
 
   long double *equalizer_main,*equalizer_adj1_OD,*target;
@@ -2510,10 +2506,6 @@ long double onesided_equalize_oneD_SOVA(int **tx_merge,int current_sample_length
     int MemoryDepth;
     int NbStates;
     int *SOVA_out;
-
-
-    long double *llr;
-    long int *llr_length;
 
 
     /**********Equalizer computation*********/
@@ -2582,19 +2574,20 @@ long double onesided_equalize_oneD_SOVA(int **tx_merge,int current_sample_length
 
     SOVA_out=vector_calloc_int(current_sample_length);
 
-    llr=vector_calloc(current_sample_length);
+
 
     /************Include for VA***********************/
-    va_detection(MemoryDepth,NbStates,target,Nb_target,equalized_op, SOVA_out,current_sample_length);
+    //va_detection(MemoryDepth,NbStates,target,Nb_target,equalized_op, SOVA_out,current_sample_length);
     /************Include for VA***********************/
-
-    llr_length=(long int *)malloc( sizeof(long int));
 
     /************Include for SOVA***********************/
-    //sova_detection(MemoryDepth,NbStates,target,Nb_target,equalized_op, SOVA_out,llr,llr_length,current_sample_length);
+    sova_detection(MemoryDepth,NbStates,target,Nb_target,equalized_op, SOVA_out,llr,llr_length,current_sample_length);
 
+    //Use this for correct number of LLR ignoring the last data block
     //current_sample_length=*llr_length;
 
+    //though last of data is not valid here we consider it just for completeness and can ignore the last block of error for completemnetss when usign LDPC!!
+    *llr_length=current_sample_length;
     /************Include for SOVA***********************/
 
 
@@ -2627,8 +2620,6 @@ long double onesided_equalize_oneD_SOVA(int **tx_merge,int current_sample_length
 
     free (SOVA_out);
 
-       free (llr_length);
-   free (llr);
 
     return ber_val;
 }

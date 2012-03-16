@@ -1,0 +1,6 @@
+ITI=20
+oneD_EQ=0
+One_sided_EQ=0
+twoD_EQ=1
+One_sided_offset=15
+save_path=ber_SMR_1Sided_EQ_11tap_1DVA_ITI_25_full_offset_10_TMR_0_LDPC_9_10.txt

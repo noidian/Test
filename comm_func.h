@@ -46,11 +46,11 @@ int map_detection(int MemoryDepth, int Nbstates, long double *target, int target
 
 long double ber_compute(int *input1,int *input2,int Nb_values);
 
-long double oneD_equalize_oneD_SOVA(int *tx_bits,int current_sample_length, long double *rx_bits,int Nb_eq,int Nb_target,int *ber_bits,float SNR);
+long double oneD_equalize_oneD_SOVA(int *tx_bits,int current_sample_length, long double *rx_bits,int Nb_eq,int Nb_target,int *ber_bits,long int *llr_length, long double *llr,float SNR);
 
-long double twoD_equalize_oneD_SOVA(int **tx_merge,int current_sample_length, long double *rx_main,long double *rx_adj1_OD,long double *rx_adj1_ID,int Nb_eq_main,int Nb_eq_adj1_OD,int Nb_eq_adj1_ID,int Nb_target,int *ber_bits,float SNR);
+long double twoD_equalize_oneD_SOVA(int **tx_merge,int current_sample_length, long double *rx_main,long double *rx_adj1_OD,long double *rx_adj1_ID,int Nb_eq_main,int Nb_eq_adj1_OD,int Nb_eq_adj1_ID,int Nb_target,int *ber_bits,long int *llr_length, long double *llr,float SNR);
 
-long double onesided_equalize_oneD_SOVA(int **tx_merge,int current_sample_length, long double *rx_main,long double *rx_adj1_OD,int Nb_eq_main,int Nb_eq_adj1_OD,int Nb_target,int *ber_bits,float SNR);
+long double onesided_equalize_oneD_SOVA(int **tx_merge,int current_sample_length, long double *rx_main,long double *rx_adj1_OD,int Nb_eq_main,int Nb_eq_adj1_OD,int Nb_target,int *ber_bits,long int *llr_length, long double *llr,float SNR);
 
 
 

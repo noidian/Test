@@ -16,6 +16,35 @@ int fileopen(char *filename,int *input,int numberofvalues)
 	return OK;
 }
 
+
+int fileopen(char *filename,char *input,int numberofvalues)
+{
+	register int i;
+
+	FILE *fp;
+	fp=fopen(filename,"r");
+	for(i=0;i<numberofvalues;i++)
+	{
+	    fscanf(fp,"%c",&input[i]);
+	    if (input[i]=='\n')             //accounts for the input data stored in next line
+            i--;
+        if (input[i]=='-')             //remap -1 to 0
+        {
+           fscanf(fp,"%c",&input[i]);
+           input[i]='\000';
+        }
+        if (input[i]=='1')
+        {
+            input[i]='\001';
+        }
+	}
+
+	fclose(fp);
+
+	return OK;
+}
+
+
 int fileopen(char *filename,long double *input,int numberofvalues)
 {
 	register int i;
@@ -29,6 +58,21 @@ int fileopen(char *filename,long double *input,int numberofvalues)
 	return OK;
 }
 
+int array_append(int *output,int *input1,int *input2, int append_length,int end_val)
+{
+    register int i;
+    for (i=0;i<end_val;i++)
+     {
+        if(i<append_length)
+            output[i]=input1[i];
+        else if(i<end_val-append_length)
+            output[i]=input2[i-append_length];
+        else
+            output[i]=input1[i-(end_val-append_length)];
+     }
+
+return OK;
+}
 
 
 int array_resize(int *input,int start_val,int end_val)
@@ -278,17 +322,28 @@ int matrix_free(long double ***input,int row, int col)
 
     return OK;
 }
-
-int filestore_ber(long double SNR,long double ber, char *filename)
+int filestore_ber(long double ber,long double ldpc_ber, char *filename)
 {
 
 	FILE *fp;
 	fp=fopen(filename,"aw");
-	fprintf(fp,"%Lf \t%Le \n",SNR,ber);
+	fprintf(fp,"%Le \t%Le \n",ber,ldpc_ber);
 	fclose(fp);
 
 	return OK;
 }
+
+
+//int filestore_ber(long double SNR,long double ber, char *filename)
+//{
+//
+//	FILE *fp;
+//	fp=fopen(filename,"aw");
+//	fprintf(fp,"%Lf \t%Le \n",SNR,ber);
+//	fclose(fp);
+//
+//	return OK;
+//}
 
 
 int filestore_prob(long double **input, char *filename, int rows)

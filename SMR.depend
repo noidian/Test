@@ -263,11 +263,11 @@
 	"comm_func.h"
 	"math_func.h"
 
-1317263396 source:/media/truecrypt1/Main/SMRgit/Test/comm_func.cpp
+1331614422 source:/media/truecrypt1/Main/SMRgit/Test/comm_func.cpp
 	"comm_func.h"
 	"math_func.h"
 
-1317004703 /media/truecrypt1/Main/SMRgit/Test/comm_func.h
+1331613085 /media/truecrypt1/Main/SMRgit/Test/comm_func.h
 	"init.h"
 	<math.h>
 	<stdio.h>
@@ -276,7 +276,7 @@
 	"generic_func.h"
 	"impulse.h"
 
-1317701594 /media/truecrypt1/Main/SMRgit/Test/init.h
+1331829111 /media/truecrypt1/Main/SMRgit/Test/init.h
 	<stdio.h>
 	"/usr/include/gsl/gsl_linalg.h"
 
@@ -285,14 +285,14 @@
 	"generic_func.h"
 	"init.h"
 
-1314318392 /media/truecrypt1/Main/SMRgit/Test/generic_func.h
+1331519515 /media/truecrypt1/Main/SMRgit/Test/generic_func.h
 	<stdio.h>
 	<stdlib.h>
 	"init.h"
 
 1318219366 /media/truecrypt1/Main/SMRgit/Test/impulse.h
 
-1314318376 source:/media/truecrypt1/Main/SMRgit/Test/generic_func.cpp
+1331519506 source:/media/truecrypt1/Main/SMRgit/Test/generic_func.cpp
 	"generic_func.h"
 
 1317701221 source:/media/truecrypt1/Main/SMRgit/Test/impulse.cpp
@@ -306,4 +306,92 @@
 
 1314146926 source:/media/truecrypt1/Main/SMRgit/Test/zeroinit.cpp
 	"init.h"
+
+1316395897 source:/media/truecrypt1/Main/SMRgit/Test/LDPC_make_gen.cpp
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<time.h>
+	"LDPC_mod2.h"
+
+1316395897 /media/truecrypt1/Main/SMRgit/Test/LDPC_mod2.h
+	"LDPC_mod2_define.h"
+	"class_AWGN.h"
+
+1316395897 /media/truecrypt1/Main/SMRgit/Test/LDPC_mod2_define.h
+
+1316395911 /media/truecrypt1/Main/SMRgit/Test/class_AWGN.h
+
+1331566989 source:/media/truecrypt1/Main/SMRgit/Test/LDPC_mod2.cpp
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<time.h>
+	"LDPC_mod2.h"
+
+1316395897 source:/media/truecrypt1/Main/SMRgit/Test/LDPC_mod2_SPA.cpp
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<time.h>
+	"LDPC_mod2.h"
+
+1316395897 source:/media/truecrypt1/Main/SMRgit/Test/LDPC_mod2_make_H.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<math.h>
+	<time.h>
+	"LDPC_mod2.h"
+
+1316395897 source:/media/truecrypt1/Main/SMRgit/Test/LDPC_mod2_read_matrix.cpp
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<time.h>
+	"LDPC_mod2.h"
+
+1316395911 source:/media/truecrypt1/Main/SMRgit/Test/class_AWGN.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<math.h>
+	<time.h>
+	"class_AWGN.h"
+
+1316395897 source:/media/truecrypt1/Main/SMRgit/Test/mod2convert_func.cpp
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"LDPC_mod2.h"
+
+1316395897 source:/media/truecrypt1/Main/SMRgit/Test/mod2dense_func.cpp
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"LDPC_mod2.h"
+
+1316395897 source:/media/truecrypt1/Main/SMRgit/Test/mod2sparse_func.cpp
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"LDPC_mod2.h"
+
+1331828815 source:/media/truecrypt1/Main/SMRgit/Test/main.cpp
+	<unistd.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<fstream>
+	<sstream>
+	"init.h"
+	"impulse.h"
+	"generic_func.h"
+	"math_func.h"
+	"comm_func.h"
+	"LDPC_mod2.h"
 

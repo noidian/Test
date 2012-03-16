@@ -8,6 +8,8 @@
 
 int fileopen(char *filename,int *input,int numberofvalues);
 
+int fileopen(char *filename,char *input,int numberofvalues);
+
 int fileopen(char *filename,long double *input,int numberofvalues);
 
 int array_copy (long double *val1,long double *val, int numberofvalues);
@@ -23,6 +25,8 @@ int vector_copy (int *val1,int *val, int numberofvalues);
 int array_resize(long double *input,int start_val,int end_val);
 
 int array_resize(int *input,int start_val,int end_val);
+
+int array_append(int *output,int *input1,int *input2, int append_length,int end_val);
 
 int shiftback_wd (char *cwd,int length,char *opwd,int shiftback_number);
 
@@ -48,7 +52,7 @@ int matrix_free(long double ***input,int row,int col);
 
 int matrix_free(int **input,int row);
 
-int filestore_ber(long double SNR,long double ber, char *filename);
+int filestore_ber(long double ber,long double ldpc_ber, char *filename);
 
 int filestore_ber(long double ber, char *filename);
 
