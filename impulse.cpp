@@ -68,17 +68,79 @@ int smr_impulse_response_2D (long double *h_n1,long double *h,long double *h_1,d
 
 int main_impulse_response_parameter_init(long double *main_PW50_cross_n1,long double *main_Ty_n1,long double *main_PW50_cross_1,long double *main_Ty_1,float TMR_Main,long double main_track_pitch,long double *main_h_n1,long double *main_h,long double *main_h_1)
 {
-    /***********Main Track******************************************/
 
-    /***********Cross track PW 50 and bit width deifnition**********/
-    //Define PW50_cross and Ty according to required ITI
-    //0.1984
-    *main_PW50_cross_n1=4.2; //OD track
-    *main_Ty_n1=5.6;
-    *main_PW50_cross_1=4.2; //ID track
-    *main_Ty_1=5.6;
-    //0.21
-    /********************Mine********************************************/
+
+     if (ITI==20)
+    {
+          /***********Main Track******************************************/
+
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        //0.1984
+        *main_PW50_cross_n1=4.2; //OD track
+        *main_Ty_n1=5.6;
+        *main_PW50_cross_1=4.2; //ID track
+        *main_Ty_1=5.6;
+        //0.21
+        /********************Mine********************************************/
+  }
+    else if (ITI==25)
+    {
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        *main_PW50_cross_n1=4.5; //OD track
+        *main_Ty_n1=5.6;
+        *main_PW50_cross_1=4.5; //ID track
+        *main_Ty_1=5.6;
+        //0.2444
+        /********************Mine********************************************/
+    }
+    else if (ITI==27)
+    {
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        *main_PW50_cross_n1=4.8; //OD track
+        *main_Ty_n1=5.6;
+        *main_PW50_cross_1=4.8; //ID track
+        *main_Ty_1=5.6;
+        //0.2898
+        /********************Mine********************************************/
+    }
+    else if (ITI==15)
+    {
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        *main_PW50_cross_n1=3.9; //OD track
+        *main_Ty_n1=5.6;
+        *main_PW50_cross_1=3.9; //ID track
+        *main_Ty_1=5.6;
+        //0.1532
+        /********************Mine********************************************/
+    }
+    else if (ITI==10)
+    {
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        *main_PW50_cross_n1=3.5; //OD track
+        *main_Ty_n1=5.6;
+        *main_PW50_cross_1=3.5; //ID track
+        *main_Ty_1=5.6;
+        //0.0974
+        /********************Mine********************************************/
+    }
+    else if (ITI==5)
+    {
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        *main_PW50_cross_n1=3.1; //OD track
+        *main_Ty_n1=5.6;
+        *main_PW50_cross_1=3.1; //ID track
+        *main_Ty_1=5.6;
+        //0.0513
+        /********************Mine********************************************/
+    }
+
+
 
     //tmr is considered towards ID side
     tmr_addition(TMR_Main,main_Ty_n1,main_Ty_1,main_track_pitch,*main_Ty_n1,*main_Ty_1);
@@ -87,21 +149,84 @@ int main_impulse_response_parameter_init(long double *main_PW50_cross_n1,long do
     smr_impulse_response_2D(main_h_n1,main_h,main_h_1,PW50_along,Tx,*main_PW50_cross_n1,*main_Ty_n1,*main_PW50_cross_1,*main_Ty_1,Amplitude,Filter_coeff);
     /*******************************************************************/
 
+    return OK;
+
 }
 
 int od_impulse_response_parameter_init(long double *od_PW50_cross_n1,long double *od_Ty_n1,long double *od_PW50_cross_1,long double *od_Ty_1,float TMR_OD,long double od_track_pitch,long double *od_h_n1,long double *od_h,long double *od_h_1)
 {
 
-    /***********OD Track******************************************/
-   /***********Cross track PW 50 and bit width deifnition**********/
-    //Define PW50_cross and Ty according to required ITI
-    //0.1984
-    *od_PW50_cross_n1=4.2; //OD track
-    *od_Ty_n1=5.6;
-    *od_PW50_cross_1=4.2; //ID track
-    *od_Ty_1=5.6;
-    //0.21
-    /********************Mine********************************************/
+        if (ITI==20)
+    {
+          /***********Main Track******************************************/
+
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        //0.1984
+        *od_PW50_cross_n1=4.2; //OD track
+        *od_Ty_n1=5.6;
+        *od_PW50_cross_1=4.2; //ID track
+        *od_Ty_1=5.6;
+        //0.21
+        /********************Mine********************************************/
+  }
+    else if (ITI==25)
+    {
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        *od_PW50_cross_n1=4.5; //OD track
+        *od_Ty_n1=5.6;
+        *od_PW50_cross_1=4.5; //ID track
+        *od_Ty_1=5.6;
+        //0.2444
+        /********************Mine********************************************/
+    }
+    else if (ITI==27)
+    {
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        *od_PW50_cross_n1=4.8; //OD track
+        *od_Ty_n1=5.6;
+        *od_PW50_cross_1=4.8; //ID track
+        *od_Ty_1=5.6;
+        //0.2898
+        /********************Mine********************************************/
+    }
+    else if (ITI==15)
+    {
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        *od_PW50_cross_n1=3.9; //OD track
+        *od_Ty_n1=5.6;
+        *od_PW50_cross_1=3.9; //ID track
+        *od_Ty_1=5.6;
+        //0.1532
+        /********************Mine********************************************/
+    }
+    else if (ITI==10)
+    {
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        *od_PW50_cross_n1=3.5; //OD track
+        *od_Ty_n1=5.6;
+        *od_PW50_cross_1=3.5; //ID track
+        *od_Ty_1=5.6;
+        //0.0974
+        /********************Mine********************************************/
+    }
+    else if (ITI==5)
+    {
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        *od_PW50_cross_n1=3.1; //OD track
+        *od_Ty_n1=5.6;
+        *od_PW50_cross_1=3.1; //ID track
+        *od_Ty_1=5.6;
+        //0.0513
+        /********************Mine********************************************/
+    }
+
+
 
     //tmr is considered towards ID side
     tmr_addition(TMR_OD,od_Ty_n1,od_Ty_1,od_track_pitch,*od_Ty_n1,*od_Ty_1);
@@ -112,20 +237,86 @@ int od_impulse_response_parameter_init(long double *od_PW50_cross_n1,long double
     smr_impulse_response_2D(od_h_n1,od_h,od_h_1,PW50_along,Tx,*od_PW50_cross_n1,*od_Ty_n1,*od_PW50_cross_1,*od_Ty_1,Amplitude,Filter_coeff);
     /*******************************************************************/
 
+return OK;
 
 }
 
 int id_impulse_response_parameter_init(long double *id_PW50_cross_n1,long double *id_Ty_n1,long double *id_PW50_cross_1,long double *id_Ty_1,float TMR_ID,long double id_track_pitch,long double *id_h_n1,long double *id_h,long double *id_h_1)
 {
-/***********Cross track PW 50 and bit width deifnition**********/
-    //Define PW50_cross and Ty according to required ITI
-    //0.1984
-    *id_PW50_cross_n1=4.2; //OD track
-    *id_Ty_n1=5.6;
-    *id_PW50_cross_1=4.2; //ID track
-    *id_Ty_1=5.6;
-    //0.21
-    /********************Mine********************************************/
+
+         if (ITI==20)
+    {
+          /***********Main Track******************************************/
+
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        //0.1984
+        *id_PW50_cross_n1=4.2; //OD track
+        *id_Ty_n1=5.6;
+        *id_PW50_cross_1=4.2; //ID track
+        *id_Ty_1=5.6;
+        //0.21
+        /********************Mine********************************************/
+  }
+    else if (ITI==25)
+    {
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        *id_PW50_cross_n1=4.5; //OD track
+        *id_Ty_n1=5.6;
+        *id_PW50_cross_1=4.5; //ID track
+        *id_Ty_1=5.6;
+        //0.2444
+        /********************Mine********************************************/
+    }
+    else if (ITI==27)
+    {
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        *id_PW50_cross_n1=4.8; //OD track
+        *id_Ty_n1=5.6;
+        *id_PW50_cross_1=4.8; //ID track
+        *id_Ty_1=5.6;
+        //0.2898
+        /********************Mine********************************************/
+    }
+    else if (ITI==15)
+    {
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        *id_PW50_cross_n1=3.9; //OD track
+        *id_Ty_n1=5.6;
+        *id_PW50_cross_1=3.9; //ID track
+        *id_Ty_1=5.6;
+        //0.1532
+        /********************Mine********************************************/
+    }
+    else if (ITI==10)
+    {
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        *id_PW50_cross_n1=3.5; //OD track
+        *id_Ty_n1=5.6;
+        *id_PW50_cross_1=3.5; //ID track
+        *id_Ty_1=5.6;
+        //0.0974
+        /********************Mine********************************************/
+    }
+    else if (ITI==5)
+    {
+        /***********Cross track PW 50 and bit width deifnition**********/
+        //Define PW50_cross and Ty according to required ITI
+        *id_PW50_cross_n1=3.1; //OD track
+        *id_Ty_n1=5.6;
+        *id_PW50_cross_1=3.1; //ID track
+        *id_Ty_1=5.6;
+        //0.0513
+        /********************Mine********************************************/
+    }
+
+
+
+
 
     //tmr is considered towards ID side
     tmr_addition(TMR_ID,id_Ty_n1,id_Ty_1,id_track_pitch,*id_Ty_n1,*id_Ty_1);
@@ -135,6 +326,8 @@ int id_impulse_response_parameter_init(long double *id_PW50_cross_n1,long double
 
     smr_impulse_response_2D(id_h_n1,id_h,id_h_1,PW50_along,Tx,*id_PW50_cross_n1,*id_Ty_n1,*id_PW50_cross_1,*id_Ty_1,Amplitude,Filter_coeff);
     /*******************************************************************/
+
+    return OK;
 
 }
 

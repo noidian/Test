@@ -14,7 +14,7 @@
 /******************SMR***************************************/
 
 
-
+extern int ITI;
 
 int impulse_response_init (long double *h,double PW_50_a,double Tx_a, double PW_50_c, double Ty_c, double Amp,int number_of_values);
 
