@@ -48,6 +48,7 @@ using namespace std;
 int ITI,onesided_offset;
 char save_path[300];
 bool oneD_EQ,twoD_EQ,onesided_EQ;
+float snr_start,snr_end,snr_dec;
 
 int fix_input();
 
@@ -87,12 +88,10 @@ int smr_parameters()
     string check ("="); //sub string to match with
     size_t found_equal;
 
-    string str_ITI,str_onesided_offset,str_save_path,str_oneD_EQ,str_twoD_EQ,str_onesided_EQ;
+    string str_ITI,str_onesided_offset,str_save_path,str_oneD_EQ,str_twoD_EQ,str_onesided_EQ,str_SNR_start,str_SNR_end,str_SNR_dec;
 
     int line_count=0;
-    int str_length;
-
-
+    int snr_temp;
 
     while (smr_param.good())
     {
@@ -118,9 +117,20 @@ int smr_parameters()
             case 5: str_save_path=temp.substr(found_equal+1,temp.length());
                     strcpy(save_path,str_save_path.c_str());
                     break;
+            case 6: str_SNR_start=temp.substr(found_equal+1,temp.length());
+                    from_string<float>(snr_start, std::string(str_SNR_start), std::dec);
+                    break;
+            case 7: str_SNR_end=temp.substr(found_equal+1,temp.length());
+                    from_string<float>(snr_end, std::string(str_SNR_end), std::dec);
+                    break;
+            case 8: str_SNR_dec=temp.substr(found_equal+1,temp.length());
+                    from_string<float>(snr_dec, std::string(str_SNR_dec), std::dec);
+                    break;
+
         }
         line_count++;
     }
+
 
     smr_param.close();
 
@@ -136,7 +146,7 @@ int full_flow()
     int **a_merge;
     int current_sample_length; //sample length
     float SNR;
-    char *fname_input_main,*fname_input_adj1_OD,*fname_input_adj1_ID,*fname_input_adj2_ID,*fname_input_adj2_OD, *current_wd,str_SNR[5];
+    char *fname_input_main,*fname_input_adj1_OD,*fname_input_adj1_ID,*fname_input_adj2_ID,*fname_input_adj2_OD, *current_wd;
     long double *h_main,*h_adj; //Main track response
 
     /****Input Filter*****/
@@ -816,7 +826,7 @@ int full_flow()
 
 
 
-for (SNR=25.0;SNR>=6.0;SNR--)
+for (SNR=snr_start;SNR>=snr_end;)
 //for (SNR=13;SNR>8;) //RS 1D Model
 {
     /* Noisy Input Filename Formation*/
@@ -997,7 +1007,9 @@ for (SNR=25.0;SNR>=6.0;SNR--)
     //filestore_ber(ber,ber_filename);
     filestore_ber(ber,ldpc_ber,ber_filename);
 
-    //SNR=SNR-0.1; //RS Model only
+    SNR=SNR-snr_dec; //RS Model only
+
+    //SNR=SNR-1;
 
 }
     /************Clear LLR length****************/
